@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class FullscreenActivity extends Activity implements View.OnClickListener {
+public class MenuActivity extends Activity implements View.OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_fullscreen);
+		setContentView(R.layout.activity_menu);
 		final Button singlePlayerButton = (Button) findViewById(R.id.button_Single_Player);
 		singlePlayerButton.setOnClickListener(this);
 	}
