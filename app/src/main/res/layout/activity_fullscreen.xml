@@ -2,19 +2,67 @@
 			 xmlns:tools="http://schemas.android.com/tools"
 			 android:layout_width="match_parent"
 			 android:layout_height="match_parent"
-			 android:background="#0099cc"
+			 android:background="#ff000000"
 			 tools:context=".FullscreenActivity">
 
-	<!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-	<TextView android:id="@+id/fullscreen_content"
-			  android:layout_width="match_parent"
-			  android:layout_height="match_parent"
-			  android:keepScreenOn="true"
-			  android:textColor="#33b5e5"
-			  android:textStyle="bold"
-			  android:textSize="50sp"
-			  android:gravity="center"
-			  android:text="@string/dummy_content"/>
+	<TextView
+			android:id="@+id/fullscreen_content"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:keepScreenOn="true"
+			android:textColor="#ff000000"
+			android:textStyle="bold"
+			android:textSize="50sp"
+			android:gravity="center"
+			/>
+
+	<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="357dp"
+			android:layout_gravity="center_horizontal|bottom">
+
+		<TextView
+				android:layout_width="276dp"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="Pong"
+				android:id="@+id/pong_textView_MainMenu"
+				android:layout_gravity="center_horizontal"
+				android:gravity="center"
+				android:textColor="#ff000000"
+				android:textSize="@dimen/abc_text_size_display_2_material"
+				android:background="#ffff0000"
+				android:layout_marginBottom="10dp"/>
+
+		<Button
+				android:layout_marginBottom="10dp"
+				android:layout_width="189dp"
+				android:layout_height="wrap_content"
+				android:text="Single Player"
+				android:id="@+id/button_Single_Player"
+				android:layout_gravity="center_horizontal"
+				android:background="#ff7dfffc"
+				android:textColor="#ff000000"/>
+
+		<Button
+				android:layout_marginBottom="10dp"
+				android:layout_width="189dp"
+				android:layout_height="wrap_content"
+				android:text="Multi Player"
+				android:id="@+id/button_Multi_player"
+				android:layout_gravity="center_horizontal|top"
+				android:textColor="#ff000000"
+				android:background="#ff7eff50"/>
+
+		<Button
+				android:layout_width="189dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal|top"
+				android:id="@+id/button_Settings"
+				android:text="Settings"
+				android:textColor="#ff000000"
+				android:background="#ffafafaf"/>
+
+	</LinearLayout>
 </FrameLayout>

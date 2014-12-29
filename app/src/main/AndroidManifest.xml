@@ -18,6 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SinglePlayer"
+            android:label="@string/title_activity_single_player"
+            android:parentActivityName=".FullscreenActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hadenw.pong.FullscreenActivity" />
+        </activity>
     </application>
 
 </manifest>
