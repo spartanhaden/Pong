@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.util.AttributeSet;
 import android.view.View;
 
 /**
@@ -30,11 +31,19 @@ public class GameView extends View {
 		super(context);
 	}
 
+	public GameView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
+
+	public GameView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+	}
+
 	protected void onDraw(Canvas canvas) {
 		physics();
 		ballColor.setARGB(255, (int) ballX % 255, (int) ballY % 255, 50);
-		playerColor.setARGB(255,255,0,0);
-		opponentColor.setARGB(255,255,255,0);
+		playerColor.setARGB(255, 255, 0, 0);
+		opponentColor.setARGB(255, 255, 255, 0);
 		canvas.drawOval(ball, ballColor);
 		canvas.drawRect(playerPaddle, playerColor);
 		canvas.drawRect(opponentPaddle, opponentColor);
@@ -46,9 +55,6 @@ public class GameView extends View {
 	}
 
 	private void physics() {
-		ball.set(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
-		playerPaddle.set(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
-		opponentPaddle.set(opponentX - paddleWidth, 100f, opponentX + paddleWidth, paddleHeight + 100f);
 		if (ballX + ballRadius >= getWidth())
 			ballXVelocity = -ballXVelocity;
 		if (ballX - ballRadius <= 0f)
@@ -59,6 +65,9 @@ public class GameView extends View {
 			ballYVelocity = -ballYVelocity;
 		ballX += ballXVelocity;
 		ballY += ballYVelocity;
+		ball.set(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
+		playerPaddle.set(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
+		opponentPaddle.set(opponentX - paddleWidth, 100f, opponentX + paddleWidth, paddleHeight + 100f);
 		if (ballXVelocity > -30 && ballXVelocity < 30) {
 			ballXVelocity *= 1.01f;
 			ballYVelocity *= 1.01f;
