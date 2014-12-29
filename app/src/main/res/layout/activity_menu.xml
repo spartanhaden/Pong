@@ -45,15 +45,5 @@
 				android:background="#ff7eff50"
             android:clickable="true" />
 
-		<Button
-				android:layout_width="189dp"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center_horizontal|top"
-				android:id="@+id/button_Settings"
-				android:text="Settings"
-				android:textColor="#ff000000"
-				android:background="#ffafafaf"
-            android:clickable="true" />
-
 	</LinearLayout>
 </FrameLayout>

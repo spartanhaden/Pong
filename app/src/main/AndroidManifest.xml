@@ -19,20 +19,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SinglePlayer"
-            android:label="@string/title_activity_single_player"
-            android:parentActivityName=".MenuActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuActivity" />
-        </activity>
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"
+            android:name=".DifficultyLevel"
+            android:label="@string/title_activity_difficulty_level"
             android:parentActivityName=".MenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.hadenw.pong.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".Easy"
+            android:label="@string/title_activity_easy"
+            android:parentActivityName=".DifficultyLevel" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hadenw.pong.DifficultyLevel" />
+        </activity>
+        <activity
+            android:name=".Medium"
+            android:label="@string/title_activity_medium"
+            android:parentActivityName=".DifficultyLevel" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hadenw.pong.DifficultyLevel" />
+        </activity>
+        <activity
+            android:name=".Hard"
+            android:label="@string/title_activity_hard"
+            android:parentActivityName=".DifficultyLevel" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hadenw.pong.DifficultyLevel" />
         </activity>
     </application>
 

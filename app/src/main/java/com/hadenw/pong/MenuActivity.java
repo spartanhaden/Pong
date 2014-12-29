@@ -15,20 +15,16 @@ public class MenuActivity extends Activity implements View.OnClickListener {
 		final Button singlePlayerButton = (Button) findViewById(R.id.button_Single_Player);
 		singlePlayerButton.setOnClickListener(this);
 
-        final Button settingsButton = (Button) findViewById(R.id.button_Settings);
-        settingsButton.setOnClickListener(this);
+
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
 			case R.id.button_Single_Player:
-				Intent intent = new Intent(this, SinglePlayer.class);
+				Intent intent = new Intent(this, DifficultyLevel.class);
 				startActivity(intent);
 				break;
-            case R.id.button_Settings:
-                Intent intentt = new Intent(this, SettingsActivity.class);
-                startActivity(intentt);
 		}
 	}
 
