@@ -14,6 +14,9 @@ public class MenuActivity extends Activity implements View.OnClickListener {
 		setContentView(R.layout.activity_menu);
 		final Button singlePlayerButton = (Button) findViewById(R.id.button_Single_Player);
 		singlePlayerButton.setOnClickListener(this);
+
+        final Button settingsButton = (Button) findViewById(R.id.button_Settings);
+        settingsButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -23,6 +26,9 @@ public class MenuActivity extends Activity implements View.OnClickListener {
 				Intent intent = new Intent(this, SinglePlayer.class);
 				startActivity(intent);
 				break;
+            case R.id.button_Settings:
+                Intent intentt = new Intent(this, SettingsActivity.class);
+                startActivity(intentt);
 		}
 	}
 
