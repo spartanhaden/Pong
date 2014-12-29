@@ -13,7 +13,7 @@ public class Easy extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy);
-        new CountDownTimer(30000,1000){
+        new CountDownTimer(60000,1000){
             @Override
             public void onTick(long millisUntilFinished) {
                 TextView time = (TextView) findViewById(R.id.time);
