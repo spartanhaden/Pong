@@ -26,12 +26,15 @@ public class DifficultyLevel extends ActionBarActivity implements View.OnClickLi
 		switch (v.getId()) {
 			case R.id.button_Easy:
 				startActivity(new Intent(this, Easy.class));
+                finish();
 				break;
 			case R.id.button_medium:
 				startActivity(new Intent(this, Medium.class));
+                finish();
 				break;
 			case R.id.button_Hard:
 				startActivity(new Intent(this, Hard.class));
+                finish();
 				break;
 		}
 	}

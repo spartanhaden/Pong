@@ -24,7 +24,7 @@ public class MenuActivity extends Activity implements View.OnClickListener {
 			case R.id.button_Single_Player:
 				Intent intent = new Intent(this, DifficultyLevel.class);
 				startActivity(intent);
-				break;
+               	break;
 		}
 	}
 

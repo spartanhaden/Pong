@@ -22,7 +22,7 @@ public class Easy extends Activity {
 
             @Override
             public void onFinish() {
-                startActivity(new Intent(Easy.this, DifficultyLevel.class));
+                startActivity(new Intent(Easy.this, DifficultyLevel.class));finish();
             }
         }.start();
     }
