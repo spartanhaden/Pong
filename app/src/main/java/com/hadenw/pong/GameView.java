@@ -15,16 +15,16 @@ public class GameView extends View {
 	public static int pScore = 0;
 	private final float paddleWidth = 200f;
 	private final float paddleHeight = 50f;
-	private float touchX = 0;
+	private float touchX = 0f;
 	private float ballX = 250f;
 	private float ballY = 500f;
 	private float ballXVelocity = DifficultyLevel.difficultyLevel;
 	private float ballYVelocity = DifficultyLevel.difficultyLevel;
 	private float ballRadius = 35f;
-	private RectF ball = new RectF(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
 	private float playerX = 0f;
-	private RectF playerPaddle = new RectF(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
 	private float opponentX = 0f;
+	private RectF ball = new RectF(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
+	private RectF playerPaddle = new RectF(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
 	private RectF opponentPaddle = new RectF(opponentX - paddleWidth, 100f, opponentX + paddleWidth, paddleHeight + 100f);
 	private Paint ballColor = new Paint();
 	private Paint playerColor = new Paint();
@@ -60,22 +60,16 @@ public class GameView extends View {
 		if ((ball.left >= playerPaddle.left) && (ball.right <= playerPaddle.right) &&
 				(ballY >= playerPaddle.top) && (ballY > playerPaddle.bottom))
 			ballY = playerPaddle.top - ballRadius;
-		setBall();
-		setPlayerPaddle();
+
+		ball.set(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
+		playerPaddle.set(touchX - paddleWidth / 2, getHeight() - paddleHeight - 100f, touchX + paddleWidth / 2, getHeight() - 100f);
 		setOpponentPaddle();
+		// Accelerates the ball until a max velocity is reached.
 		if (ballXVelocity > -DifficultyLevel.difficultyLevel + 15 && ballXVelocity < DifficultyLevel.difficultyLevel + 15) {
 			ballXVelocity *= 1.01f;
 			ballYVelocity *= 1.01f;
 		}
 		getBallVelocity();
-	}
-
-	private void setBall() {
-		ball.set(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
-	}
-
-	private void setPlayerPaddle() {
-		playerPaddle.set(touchX - paddleWidth / 2, getHeight() - paddleHeight - 100f, touchX + paddleWidth / 2, getHeight() - 100f);
 	}
 
 	private void setOpponentPaddle() {
@@ -127,12 +121,9 @@ public class GameView extends View {
 	}
 
 	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		touchX = (int) event.getX();
-		if (touchX + paddleWidth / 2 >= getWidth())
-			touchX = getWidth() - paddleWidth / 2;
-		else if (touchX - paddleWidth / 2 <= 0)
-			touchX = 0 + paddleWidth / 2;
-		return false;
+	public boolean onTouchEvent(MotionEvent e) {
+		final float x = e.getRawX();
+		touchX = x;
+		return true;
 	}
 }
