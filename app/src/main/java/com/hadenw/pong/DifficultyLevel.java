@@ -13,7 +13,6 @@ public class DifficultyLevel extends Activity implements View.OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_difficulty_level);
-
 		final Button easyButton = (Button) findViewById(R.id.button_easy);
 		final Button mediumButton = (Button) findViewById(R.id.button_medium);
 		final Button hardButton = (Button) findViewById(R.id.button_hard);

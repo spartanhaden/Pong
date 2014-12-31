@@ -10,7 +10,6 @@ public class MenuActivity extends Activity implements View.OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_menu);
 		final Button singlePlayerButton = (Button) findViewById(R.id.button_Single_Player);
 		singlePlayerButton.setOnClickListener(this);

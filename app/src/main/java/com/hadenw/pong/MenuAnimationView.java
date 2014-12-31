@@ -18,15 +18,14 @@ public class MenuAnimationView extends View {
 	private float ballXVelocity = 5f;
 	private float ballYVelocity = 5f;
 	private float ballRadius = 35f;
-	private float playerX = 0f;
-	private float opponentX = 0f;
 	private RectF ball = new RectF(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
+	private float playerX = 0f;
 	private RectF playerPaddle = new RectF(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
+	private float opponentX = 0f;
 	private RectF opponentPaddle = new RectF(opponentX - paddleWidth, 100f, opponentX + paddleWidth, paddleHeight + 100f);
 	private Paint ballColor = new Paint();
 	private Paint playerColor = new Paint();
 	private Paint opponentColor = new Paint();
-
 
 	public MenuAnimationView(Context context) {
 		super(context);
