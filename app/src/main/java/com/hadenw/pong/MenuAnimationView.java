@@ -5,21 +5,18 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by Haden Wasserbaech on 12/29/14.
+ * Created by Robin Onsay on 12/31/2014.
  */
-public class GameView extends View {
-	public static int pScore = 0;
+public class MenuAnimationView extends View {
 	private final float paddleWidth = 200f;
 	private final float paddleHeight = 50f;
-	private float touchX = 0;
 	private float ballX = 250f;
 	private float ballY = 500f;
-	private float ballXVelocity = DifficultyLevel.difficultyLevel;
-	private float ballYVelocity = DifficultyLevel.difficultyLevel;
+	private float ballXVelocity = 5f;
+	private float ballYVelocity = 5f;
 	private float ballRadius = 35f;
 	private RectF ball = new RectF(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
 	private float playerX = 0f;
@@ -31,21 +28,21 @@ public class GameView extends View {
 	private Paint opponentColor = new Paint();
 
 
-	public GameView(Context context) {
+	public MenuAnimationView(Context context) {
 		super(context);
 	}
 
-	public GameView(Context context, AttributeSet attrs) {
+	public MenuAnimationView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 
-	public GameView(Context context, AttributeSet attrs, int defStyle) {
+	public MenuAnimationView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
 
 	protected void onDraw(Canvas canvas) {
 		physics();
-		ballColor.setARGB(255, 0, 255, 50);
+		ballColor.setARGB(255, 255, 255, 50);
 		playerColor.setARGB(255, 255, 0, 0);
 		opponentColor.setARGB(255, 255, 255, 0);
 		canvas.drawOval(ball, ballColor);
@@ -63,7 +60,7 @@ public class GameView extends View {
 		setBall();
 		setPlayerPaddle();
 		setOpponentPaddle();
-		if (ballXVelocity > -DifficultyLevel.difficultyLevel + 15 && ballXVelocity < DifficultyLevel.difficultyLevel + 15) {
+		if (ballXVelocity > -20 && ballXVelocity < 20) {
 			ballXVelocity *= 1.01f;
 			ballYVelocity *= 1.01f;
 		}
@@ -75,24 +72,25 @@ public class GameView extends View {
 	}
 
 	private void setPlayerPaddle() {
-		playerPaddle.set(touchX - paddleWidth / 2, getHeight() - paddleHeight - 100f, touchX + paddleWidth / 2, getHeight() - 100f);
+		if (ball.left + paddleWidth >= getWidth())
+			playerPaddle.set(getWidth() - paddleWidth, getHeight() - paddleHeight - 100f,
+					getWidth(), getHeight() - 100f);
+		else
+			playerPaddle.set(ball.left, getHeight() - paddleHeight - 100f, ball.left + paddleWidth, getHeight() - 100f);
 	}
 
 	private void setOpponentPaddle() {
 		if (ball.left + paddleWidth >= getWidth())
 			opponentPaddle.set(getWidth() - paddleWidth, 100f, getWidth(), paddleHeight + 100f);
-
 		else
 			opponentPaddle.set(ball.left, 100f, ball.left + paddleWidth, paddleHeight + 100f);
 	}
 
 	private void getBallVelocity() {
-
 		if ((ball.left >= playerPaddle.left) && (ball.right <= playerPaddle.right) &&
 				(ball.bottom >= playerPaddle.top) && (ball.bottom <= playerPaddle.top + ballYVelocity)) {
 			ballXVelocity = (Math.random() > 0.5) ? ballXVelocity : -ballXVelocity;
 			ballYVelocity = -ballYVelocity;
-			pScore++;
 		}
 		if (((ball.left >= opponentPaddle.left) && (ball.right <= opponentPaddle.right)) && (ball.top <= opponentPaddle.bottom)) {
 			ballXVelocity = (Math.random() > 0.5) ? ballXVelocity : -ballXVelocity;
@@ -106,33 +104,5 @@ public class GameView extends View {
 			ballYVelocity = -ballYVelocity;
 		if (ball.bottom <= 0f)
 			ballYVelocity = -ballYVelocity;
-		if (ball.bottom > playerPaddle.bottom && (ball.left < playerPaddle.left
-				|| ball.right > playerPaddle.right)) {
-			ballX = getWidth() / 2;
-			ballY = getHeight() / 2;
-			ballXVelocity = (Math.random() > 0.5) ? -5f : 5f;
-			ballYVelocity = 10;
-			try {
-				pScore -= pScore < 2 ? 0 : 2;
-				Thread.sleep(3000);
-			} catch (InterruptedException ee) {
-			}
-		}
-		if (ball.top < opponentPaddle.top) {
-			ballX = getWidth() / 2;
-			ballY = getHeight() / 2;
-			ballXVelocity = 5f;
-			ballYVelocity = 10;
-		}
-	}
-
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		touchX = (int) event.getX();
-		if (touchX + paddleWidth / 2 >= getWidth())
-			touchX = getWidth() - paddleWidth / 2;
-		else if (touchX - paddleWidth / 2 <= 0)
-			touchX = 0 + paddleWidth / 2;
-		return false;
 	}
 }

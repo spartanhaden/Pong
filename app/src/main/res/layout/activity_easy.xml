@@ -2,25 +2,46 @@
 				xmlns:tools="http://schemas.android.com/tools"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:background="#ff000000"
 				android:paddingTop="@dimen/activity_vertical_margin"
-				tools:context="com.hadenw.pong.Easy">
-
-	<TextView
-			android:text="@string/player_score"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
-
-	<TextView
-			android:text="@string/time"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
-
-	<TextView
-			android:text="@string/opponent_score"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+				tools:context="com.hadenw.pong.Game">
 
 	<com.hadenw.pong.GameView
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"/>
+			android:layout_height="fill_parent"
+			android:layout_below="@+id/linearLayout"/>
+
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:background="#ffff"
+			android:gravity="center"
+			android:id="@+id/linearLayout">
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/player_score"
+				android:textColor="#ff000000"
+				android:textSize="18sp"/>
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/Score"
+				android:textColor="#ff000000"
+				android:textSize="18sp"/>
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/time"
+				android:textAlignment="center"
+				android:textColor="#ffb90012"
+				android:textSize="18sp"
+				android:layout_marginLeft="120dp"
+				android:layout_marginRight="60dp"/>
+	</LinearLayout>
 </RelativeLayout>
