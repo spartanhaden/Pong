@@ -11,25 +11,12 @@
 			android:layout_height="357dp"
 			android:layout_gravity="center_horizontal|bottom">
 
-		<TextView
-				android:layout_width="276dp"
-				android:layout_height="wrap_content"
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:text="Pong"
-				android:id="@+id/pong_textView_MainMenu"
-				android:layout_gravity="center_horizontal"
-				android:gravity="center"
-				android:textColor="#ff000000"
-				android:textSize="@dimen/abc_text_size_display_2_material"
-				android:background="#ffff0000"
-				android:layout_marginBottom="10dp"/>
-
 		<Button
 				android:layout_marginBottom="10dp"
 				android:layout_width="189dp"
 				android:layout_height="wrap_content"
-				android:text="Single Player"
-				android:id="@+id/button_Single_Player"
+				android:text="Easy"
+				android:id="@+id/button_easy"
 				android:layout_gravity="center_horizontal"
 				android:background="#ff7dfffc"
 				android:textColor="#ff000000"
@@ -39,11 +26,21 @@
 				android:layout_marginBottom="10dp"
 				android:layout_width="189dp"
 				android:layout_height="wrap_content"
-				android:text="Multi Player"
-				android:id="@+id/button_Multi_player"
+				android:text="Medium"
+				android:id="@+id/button_medium"
 				android:layout_gravity="center_horizontal|top"
 				android:textColor="#ff000000"
 				android:background="#ff7eff50"
+				android:clickable="true"/>
+
+		<Button
+				android:layout_width="189dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal|top"
+				android:id="@+id/button_hard"
+				android:text="Hard"
+				android:textColor="#ff000000"
+				android:background="#ffafafaf"
 				android:clickable="true"/>
 	</LinearLayout>
 </FrameLayout>

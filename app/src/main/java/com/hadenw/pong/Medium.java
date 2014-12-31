@@ -1,14 +1,12 @@
 package com.hadenw.pong;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 
-
-public class SinglePlayer extends Activity {
-
+public class Medium extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(new BallView(this));
+		setContentView(R.layout.activity_medium);
 	}
 }
