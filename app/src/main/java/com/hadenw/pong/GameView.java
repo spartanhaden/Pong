@@ -45,7 +45,7 @@ public class GameView extends View {
 
     protected void onDraw(Canvas canvas) {
         physics();
-        ballColor.setARGB(255, 255,  255, 50);
+        ballColor.setARGB(255, 0,  255, 50);
         playerColor.setARGB(255, 255, 0, 0);
         opponentColor.setARGB(255, 255, 255, 0);
         canvas.drawOval(ball, ballColor);

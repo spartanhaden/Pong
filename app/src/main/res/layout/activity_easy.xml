@@ -2,6 +2,7 @@
 				xmlns:tools="http://schemas.android.com/tools"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+                android:background="#ff000000"
 				android:paddingTop="@dimen/activity_vertical_margin"
 				tools:context="com.hadenw.pong.Easy">
 
@@ -16,27 +17,27 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="#ff000000"
+        android:background="#ffff"
         android:gravity="center"
         android:id="@+id/linearLayout">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/player_score"
-            android:textColor="#ffff"
+            android:textColor="#ff000000"
             android:textSize="18sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Score"
-            android:textColor="#ffff"
+            android:textColor="#ff000000"
             android:textSize="18sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/time"
             android:textAlignment="center"
-            android:textColor="#ffff"
+            android:textColor="#ffb90012"
             android:textSize="18sp"
             android:layout_marginLeft="120dp"
             android:layout_marginRight="60dp" />
