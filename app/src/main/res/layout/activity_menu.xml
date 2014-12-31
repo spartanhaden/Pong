@@ -40,7 +40,7 @@
 				android:layout_marginBottom="10dp"
 				android:layout_width="189dp"
 				android:layout_height="wrap_content"
-				android:text="Single Player"
+				android:text="Play"
 				android:id="@+id/button_Single_Player"
 				android:layout_gravity="center_horizontal"
 				android:background="#ff7dfffc"

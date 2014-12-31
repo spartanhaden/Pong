@@ -17,7 +17,8 @@
         android:background="#ffff0000"
         android:text="Score: "
         android:textSize="48sp"
-        android:layout_marginTop="200dp" />
+        android:layout_marginTop="200dp"
+        android:id="@+id/shareText"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,13 +26,16 @@
         android:text="Play Again"
         android:id="@+id/button_Play_Again"
         android:layout_marginTop="60dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="30dp"
+        android:textColor="#ffffffff"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Share"
         android:id="@+id/button_Share"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:textColor="#ffffffff"
+       />
 
 
 </LinearLayout>

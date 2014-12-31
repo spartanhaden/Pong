@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
-public class Game extends Activity {
+public class Game extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class Game extends Activity {
 
 			@Override
 			public void onFinish() {
-				startActivity(new Intent(Game.this, MenuActivity.class));
+				startActivity(new Intent(Game.this, PostGameActivity.class));
 				finish();
 			}
 		}.start();

@@ -73,9 +73,9 @@ public class GameView extends View {
     }
 
     private void setPlayerPaddle() {
-        if (touchX - paddleWidth < 0) {
+        if (touchX - paddleWidth/2 < 0) {
             playerPaddle.set(0, getHeight() - paddleHeight - 100f, paddleWidth, getHeight() - 100f);
-        } else if (touchX + paddleWidth > getWidth()) {
+        } else if (touchX + paddleWidth/2 > getWidth()) {
             playerPaddle.set(getWidth() - paddleWidth, getHeight() - paddleHeight - 100f,
                     getWidth(), getHeight() - 100f);
         } else
