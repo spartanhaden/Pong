@@ -6,35 +6,35 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 
-
 public class DifficultyLevel extends ActionBarActivity implements View.OnClickListener {
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_difficulty_level);
-		final Button settingsButton = (Button) findViewById(R.id.button_Easy);
-		settingsButton.setOnClickListener(this);
-		final Button settingsButton1 = (Button) findViewById(R.id.button_medium);
-		settingsButton1.setOnClickListener(this);
-		final Button settingsButton2 = (Button) findViewById(R.id.button_Hard);
-		settingsButton2.setOnClickListener(this);
+
+		final Button easyButton = (Button) findViewById(R.id.button_easy);
+		final Button mediumButton = (Button) findViewById(R.id.button_medium);
+		final Button hardButton = (Button) findViewById(R.id.button_hard);
+
+		easyButton.setOnClickListener(this);
+		mediumButton.setOnClickListener(this);
+		hardButton.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.button_Easy:
+			case R.id.button_easy:
 				startActivity(new Intent(this, Easy.class));
-                finish();
+				finish();
 				break;
 			case R.id.button_medium:
 				startActivity(new Intent(this, Medium.class));
-                finish();
+				finish();
 				break;
-			case R.id.button_Hard:
+			case R.id.button_hard:
 				startActivity(new Intent(this, Hard.class));
-                finish();
+				finish();
 				break;
 		}
 	}

@@ -15,14 +15,13 @@ public class GameView extends View {
 	private float playerX = 50f;
 	private float paddleWidth = 300f;
 	private float paddleHeight = 100f;
+	private RectF playerPaddle = new RectF(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
+	private RectF opponentPaddle = new RectF(opponentX - paddleWidth, 100f, opponentX + paddleWidth, paddleHeight + 100f);
 	private float ballX = 500f;
 	private float ballY = 500f;
 	private float ballXVelocity = 5f;
 	private float ballYVelocity = 5f;
 	private float ballRadius = 50f;
-
-    private RectF playerPaddle = new RectF(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
-	private RectF opponentPaddle = new RectF(opponentX - paddleWidth, 100f, opponentX + paddleWidth, paddleHeight + 100f);
 	private RectF ball = new RectF(ballX - ballRadius, ballY - ballRadius, ballX + ballRadius, ballY + ballRadius);
 	private Paint ballColor = new Paint();
 	private Paint playerColor = new Paint();
