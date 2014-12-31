@@ -11,7 +11,8 @@
             android:name=".MenuActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme" >
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +22,8 @@
         <activity
             android:name=".DifficultyLevel"
             android:label="@string/title_activity_difficulty_level"
-            android:parentActivityName=".MenuActivity" >
+            android:parentActivityName=".MenuActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.hadenw.pong.MenuActivity" />
@@ -29,23 +31,8 @@
         <activity
             android:name=".Easy"
             android:label="@string/title_activity_easy"
-            android:parentActivityName=".DifficultyLevel" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.hadenw.pong.DifficultyLevel" />
-        </activity>
-        <activity
-            android:name=".Medium"
-            android:label="@string/title_activity_medium"
-            android:parentActivityName=".DifficultyLevel" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.hadenw.pong.DifficultyLevel" />
-        </activity>
-        <activity
-            android:name=".Hard"
-            android:label="@string/title_activity_hard"
-            android:parentActivityName=".DifficultyLevel" >
+            android:parentActivityName=".DifficultyLevel"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.hadenw.pong.DifficultyLevel" />

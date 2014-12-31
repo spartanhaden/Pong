@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 
 public class Easy extends Activity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,15 +16,17 @@ public class Easy extends Activity {
             @Override
             public void onTick(long millisUntilFinished) {
                 TextView time = (TextView) findViewById(R.id.time);
-                time.setText(Integer.toString((int)(millisUntilFinished/1000)));
+                time.setText("Time: "+ Integer.toString((int)(millisUntilFinished/1000)));
+                TextView playerScore = (TextView) findViewById(R.id.Score);
+                playerScore.setText(" " + GameView.pScore);
             }
 
             @Override
             public void onFinish() {
-                startActivity(new Intent(Easy.this, DifficultyLevel.class));finish();
+                startActivity(new Intent(Easy.this,MenuActivity.class));
+                finish();
             }
         }.start();
+
     }
-
-
 }

@@ -1,14 +1,14 @@
 package com.hadenw.pong;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 
 
-public class DifficultyLevel extends ActionBarActivity implements View.OnClickListener {
-
+public class DifficultyLevel extends Activity implements View.OnClickListener {
+    public static float difficultyLevel;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,15 +25,18 @@ public class DifficultyLevel extends ActionBarActivity implements View.OnClickLi
 	public void onClick(View v) {
 		switch (v.getId()) {
 			case R.id.button_Easy:
+                difficultyLevel = 5f;
 				startActivity(new Intent(this, Easy.class));
                 finish();
 				break;
 			case R.id.button_medium:
-				startActivity(new Intent(this, Medium.class));
+				startActivity(new Intent(this, Easy.class));
+                difficultyLevel = 10f;
                 finish();
 				break;
 			case R.id.button_Hard:
-				startActivity(new Intent(this, Hard.class));
+				startActivity(new Intent(this, Easy.class));
+                difficultyLevel = 15f;
                 finish();
 				break;
 		}
