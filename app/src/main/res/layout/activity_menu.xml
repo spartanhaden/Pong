@@ -4,16 +4,18 @@
 			 android:layout_height="match_parent"
 			 android:background="#ff000000"
 			 tools:context=".FullscreenActivity">
-    <FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context="com.hadenw.pong.MenuAnimationView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.hadenw.pong.MenuAnimationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-        </FrameLayout>
+
+	<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				 xmlns:tools="http://schemas.android.com/tools"
+				 tools:context="com.hadenw.pong.MenuAnimationView"
+				 android:layout_width="match_parent"
+				 android:layout_height="match_parent">
+
+		<com.hadenw.pong.MenuAnimationView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"/>
+	</FrameLayout>
+
 	<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
@@ -32,7 +34,7 @@
 				android:textSize="60dp"
 				android:background="#ffff0000"
 				android:layout_marginBottom="10dp"
-            android:textStyle="bold" />
+				android:textStyle="bold"/>
 
 		<Button
 				android:layout_marginBottom="10dp"
@@ -43,8 +45,6 @@
 				android:layout_gravity="center_horizontal"
 				android:background="#ff7dfffc"
 				android:textColor="#ff000000"
-            android:clickable="true" />
-
-    </LinearLayout>
-
+				android:clickable="true"/>
+	</LinearLayout>
 </FrameLayout>
