@@ -111,7 +111,7 @@ public class GameView extends View {
             ballYVelocity = -ballYVelocity;
         if (ball.bottom <= 0f)
             ballYVelocity = -ballYVelocity;
-        if (ball.bottom > playerPaddle.bottom && (ball.left < playerPaddle.left
+        if (ball.top > playerPaddle.bottom && (ball.left < playerPaddle.left
                 || ball.right > playerPaddle.right)) {
             ballX = getWidth() / 2;
             ballY = getHeight() / 2;
@@ -129,6 +129,18 @@ public class GameView extends View {
             ballXVelocity = 5f;
             ballYVelocity = 10;
         }
+
+        if(ball.left<playerPaddle.left&&ball.right>playerPaddle.left&&ball.bottom>=playerPaddle.top){
+            pScore++;
+            ballXVelocity = -ballXVelocity;
+            ballYVelocity = -ballYVelocity;
+        }
+        if(ball.right<playerPaddle.right&&ball.left>playerPaddle.right&&ball.bottom>=playerPaddle.top){
+            pScore++;
+            ballXVelocity = -ballXVelocity;
+            ballYVelocity = -ballYVelocity;
+        }
+
     }
     @Override
     public boolean onTouchEvent(MotionEvent e) {
