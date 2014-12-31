@@ -3,7 +3,6 @@ package com.hadenw.pong;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +16,8 @@ public class PostGameActivity extends Activity implements View.OnClickListener  
         setContentView(R.layout.activity_post_game);
         final Button playAgainButton = (Button) findViewById(R.id.button_Play_Again);
         playAgainButton.setOnClickListener(this);
+        final Button shareButton = (Button) findViewById(R.id.button_Share);
+        shareButton.setOnClickListener(this);
         TextView textView = (TextView) findViewById(R.id.scoreText);
         textView.setText("Score: "+Integer.toString(GameView.pScore));
     }
@@ -29,13 +30,12 @@ public class PostGameActivity extends Activity implements View.OnClickListener  
                 startActivity(new Intent(this,DifficultyLevel.class));finish();
                 break;
             case R.id.button_Share:
-                Log.w("BUTTON_SHARE", "Button share clicked!");
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "I just scored "+ GameView.pScore+
-                        " in an awesome pong game! #tbt #pong #bringingSexyBack");
+                        " in an awesome, new pong game! #tbt #pong #bringingSexyBack");
                 sendIntent.setType("text/plain");
-                startActivity(sendIntent);
+                startActivity(Intent.createChooser(sendIntent,""));
         }
     }
 }
