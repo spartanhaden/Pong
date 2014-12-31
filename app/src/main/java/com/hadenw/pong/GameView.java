@@ -11,11 +11,11 @@ import android.view.View;
  * Created by Haden Wasserbaech on 12/29/14.
  */
 public class GameView extends View {
-	private float opponentX = 50f;
+	private final float paddleWidth = 300f;
+	private final float paddleHeight = 100f;
 	private float playerX = 50f;
-	private float paddleWidth = 300f;
-	private float paddleHeight = 100f;
 	private RectF playerPaddle = new RectF(playerX - paddleWidth, getHeight() - paddleHeight - 100f, playerX + paddleWidth, getHeight() - 100f);
+	private float opponentX = 50f;
 	private RectF opponentPaddle = new RectF(opponentX - paddleWidth, 100f, opponentX + paddleWidth, paddleHeight + 100f);
 	private float ballX = 500f;
 	private float ballY = 500f;
