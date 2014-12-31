@@ -6,17 +6,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class PostGameActivity extends Activity implements View.OnClickListener  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        TextView textView = (TextView) findViewById(R.id.shareText);
-//        textView.setText(""+GameView.pScore);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_game);
         final Button playAgainButton = (Button) findViewById(R.id.button_Play_Again);
         playAgainButton.setOnClickListener(this);
+        TextView textView = (TextView) findViewById(R.id.scoreText);
+        textView.setText("Score: "+Integer.toString(GameView.pScore));
     }
 
     @Override
